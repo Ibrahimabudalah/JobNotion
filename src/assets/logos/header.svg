@@ -1,0 +1,45 @@
+<svg
+  width="320"
+  height="64"
+  viewBox="0 0 320 64"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g id="icon" transform="translate(0, 6)">
+    <rect
+      x="8"
+      y="10"
+      width="40"
+      height="44"
+      rx="6"
+      fill="#4d0cbeff"
+    />
+    <rect
+      x="18"
+      y="4"
+      width="20"
+      height="12"
+      rx="4"
+      fill="#7C7CFF"
+    />
+    <path
+      d="M18 34 L26 42 L38 26"
+      stroke="white"
+      stroke-width="3"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+    />
+  </g>
+  <text
+    x="55"
+    y="47"
+    font-size="32"
+    font-weight="600"
+    font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+    fill="#1c014a"
+    letter-spacing="0.5"
+  >
+    Job<tspan fill="#F8FAFC">Notion</tspan>
+  </text>
+</svg>
