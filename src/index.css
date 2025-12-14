@@ -6,4 +6,10 @@
   .listing-label {
     @apply pb-2 font-bold text-base text-[#D6CCFF];
   }
+  .listing-input {
+    @apply border border-white/30 rounded-lg bg-[#2a0e61] hover:bg-[#6d55b3] text-[#B8B2D8] p-4;
+  }
+  .listing-button {
+    @apply bg-[#2a0e61] text-[#B8B2D8] font-bold hover:bg-[#6d55b3] border border-white/30 px-8 py-2 rounded-lg;
+  }
 }
