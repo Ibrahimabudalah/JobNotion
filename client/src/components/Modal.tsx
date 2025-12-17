@@ -17,6 +17,7 @@ export default function Modal({
   isCoverLetter,
   getIfCoverLetter,
 }: ModalProps) {
+  const jobPostingAPI = process.env.REACT_APP_JOB_POSTING_API;
   const [companyName, setCompanyName] = useState("");
   const [jobTitle, setJobTitle] = useState("");
   const [jobURL, setJobURL] = useState("");
@@ -29,16 +30,7 @@ export default function Modal({
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    const data = [
-      companyName,
-      jobTitle,
-      jobURL,
-      resumeAppliedWith,
-      isCoverLetter,
-      location,
-      description,
-      currentDate,
-    ];
+
     const formData = new FormData();
     formData.append("companyName", companyName);
     formData.append("jobTitle", jobTitle);
@@ -48,8 +40,12 @@ export default function Modal({
     formData.append("location", location);
     formData.append("description", description);
     formData.append("currentDate", currentDate);
+
+    if (!jobPostingAPI) {
+      throw new Error("Missing REACT_APP_JOB_POSTING_API");
+    }
     axios
-      .post("http://localhost/phpPractice/index.php", formData)
+      .post(jobPostingAPI, formData)
       .then(function (res) {
         console.log(res.data);
       })
