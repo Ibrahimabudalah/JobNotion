@@ -5,28 +5,21 @@ import axios from "axios";
 type ModalProps = {
   isModal: boolean;
   toggleModal: () => void;
-  isCoverLetter: string;
-  getIfCoverLetter: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => void;
 };
 
-export default function Modal({
-  isModal,
-  toggleModal,
-  isCoverLetter,
-  getIfCoverLetter,
-}: ModalProps) {
+export default function Modal({ isModal, toggleModal }: ModalProps) {
   const jobPostingAPI = process.env.REACT_APP_JOB_POSTING_API;
   const [companyName, setCompanyName] = useState("");
   const [jobTitle, setJobTitle] = useState("");
   const [jobURL, setJobURL] = useState("");
   const [resumeAppliedWith, setResumeAppliedWith] = useState("");
+  const [isCoverLetter, setIsCoverLetter] = useState("yes");
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
 
   const timestamp = Date.now();
   const currentDate = new Date(timestamp).toISOString().slice(0, 10);
+
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -138,7 +131,7 @@ export default function Modal({
             <label className="listing-label">Cover Letter</label>
             <select
               value={isCoverLetter}
-              onChange={getIfCoverLetter}
+              onChange={(e) => setIsCoverLetter(e.target.value)}
               name="coverLetter"
               id="coverLetter"
               className="listing-input px-20"

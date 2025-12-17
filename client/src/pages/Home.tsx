@@ -3,12 +3,7 @@ import JobListingItem from "../components/JobListingItem";
 import Modal from "../components/Modal";
 
 export default function Home() {
-  const [isCoverLetter, setIsCoverLetter] = useState("yes");
   const [isModal, setIsModal] = useState(false);
-
-  const getIfCoverLetter = (e: any) => {
-    setIsCoverLetter(e.target.value);
-  };
 
   const toggleModal = () => {
     setIsModal(!isModal);
@@ -22,12 +17,7 @@ export default function Home() {
           Add new job
         </button>
       </section>
-      <Modal
-        isModal={isModal}
-        toggleModal={toggleModal}
-        isCoverLetter={isCoverLetter}
-        getIfCoverLetter={getIfCoverLetter}
-      />
+      <Modal isModal={isModal} toggleModal={toggleModal} />
       <JobListingItem />
       <JobListingItem />
       <JobListingItem />
