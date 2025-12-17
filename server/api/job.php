@@ -29,7 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $description = $_POST['description'] ?? null;
     $currentDate = $_POST['currentDate'] ?? null;
 
-    $isCoverLetter = isset($_POST['isCoverLetter']) && $_POST['isCoverLetter'] === '1' ? 1 : 0;
+    $isCoverLetter = ($_POST['isCoverLetter'] === 'yes') ? 1 : 0;
+
 
 
     /**
